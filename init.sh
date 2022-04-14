@@ -5,6 +5,7 @@ if [[ "`uname`" =~ 'Darwin' && -z $pyver ]]; then
    echo "Need python 3.10 or higher, trying 'brew install python@3.10', ctrl-c to break in next 10secs"
    sleep 20s
    brew install python@3.10
+   echo 'export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"' >> ~/.zshrc
    exit 1
 elif [[ -z $pyver ]]; then
   echo "Need python 3.10 or higher"
