@@ -37,25 +37,36 @@ configure_conda() {
   conda config --set show_channel_urls True
 }
 
-[[ -d "$envname" ]] && rm -r $envname
+[[ "$1" =~ "--clean" &&  -d "$envname" ]] && rm -r $envname
 if [[ ! -d ${cwd}/${envname} ]]; then
   conda create --prefix ${cwd}/${envname} python=3 -y -q  # --file=environment.txt
-  output="`conda init $shtype 2>&1 | grep $shtype`"
+  # output="`conda init $shtype 2>&1 | grep $shtype`"
 
-  # srcpath="${output##*( )}"
-  IFS=' ' read -r -a srcpath <<< "$output"
-  echo "---- ${srcpath[@]}"
-  shsrc="${srcpath[@]: -1}"
-  echo "extracted [$shsrc] from [ $output ] "
+  # # srcpath="${output##*( )}"
+  # IFS=' ' read -r -a srcpath <<< "$output"
+  # echo "---- ${srcpath[@]}"
+  # shsrc="${srcpath[@]: -1}"
+  # echo "extracted [$shsrc] from [ $output ] "
 
-  source $shsrc
-  configure_conda
+  # source $shsrc
+  # configure_conda
 fi
 
+output="`conda init $shtype 2>&1 | grep $shtype`"
+
+# srcpath="${output##*( )}"
+IFS=' ' read -r -a srcpath <<< "$output"
+echo "---- ${srcpath[@]}"
+shsrc="${srcpath[@]: -1}"
+echo "extracted [$shsrc] from [ $output ] "
+
+source $shsrc
+configure_conda
 rechkenv="`conda info --envs | grep ${envname}`" 
 [[ ! -n $rechkenv ]] && echo "conda env not found!!" && exit 1 || echo "env ${rechkenv} found !!"
 
 conda activate ${cwd}/${envname}
+conda activate ${rechkenv}
 configure_conda
 
 conda install "geopandas>=0.10.2" -y
