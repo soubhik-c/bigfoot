@@ -37,7 +37,7 @@ configure_conda() {
   conda config --set show_channel_urls True
 }
 
-[[ "$1" =~ "--clean" &&  -d "$envname" ]] && rm -r $envname
+[[ "$1" =~ "--clean" && -d "$envname" ]] && rm -r $envname
 if [[ ! -d ${cwd}/${envname} ]]; then
   conda create --prefix ${cwd}/${envname} python=3 -y -q  # --file=environment.txt
   # output="`conda init $shtype 2>&1 | grep $shtype`"
@@ -73,7 +73,7 @@ conda install "geopandas>=0.10.2" -y
 check_errors
 
 echo "installed geopandas... installing wordcloud"
-conda install -c conda-forge wordcloud contextily nltk spacy -y
+conda install -c conda-forge wordcloud contextily nltk spacy seaborn -y
 check_errors
 
 python -m spacy download en_core_web_lg
