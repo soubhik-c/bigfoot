@@ -67,8 +67,9 @@ configure_conda
 rechkenv="`conda info --envs | grep ${envname}`" 
 [[ ! -n $rechkenv ]] && echo "conda env not found!!" && exit 1 || echo "env ${rechkenv} found !!"
 
+echo "Activating ${cwd}/${envname}"
 conda activate ${cwd}/${envname}
-conda activate ${rechkenv}
+#conda activate ${rechkenv}
 configure_conda
 
 conda install "geopandas>=0.10.2" -y
@@ -78,8 +79,11 @@ echo "installed geopandas... installing wordcloud"
 conda install -c conda-forge wordcloud contextily nltk spacy seaborn -y
 check_errors
 
-python -m spacy download en_core_web_lg
-python -m spacy download en_core_web_sm
+#python -m spacy download en_core_web_lg
+#python -m spacy download en_core_web_sm
+
+conda info --envs
+python ./spacy_download.py
 check_errors
 
 conda install jupyter -y
