@@ -38,6 +38,8 @@ configure_conda() {
 }
 
 [[ "$1" =~ "--clean" && -d "$envname" ]] && rm -r $envname
+[[ "$1" =~ "--clean" && -f "src/bigfoot_with_derived_date.pkl" ]] && rm -r src/bigfoot_with_derived_date.pkl
+
 if [[ ! -d ${cwd}/${envname} ]]; then
   conda create --prefix ${cwd}/${envname} python=3 -y -q  # --file=environment.txt
   # output="`conda init $shtype 2>&1 | grep $shtype`"
