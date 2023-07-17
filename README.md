@@ -33,8 +33,8 @@ b) Linux and Windows environment will require python3.10 to be installed outside
 ## Troubleshooting:
    - in case of any difficulty, please contact any of the following team members:
 
-     a) Soubhik @ +1 617 906 1795 , schakraborty@falcon.bentley.edu, whatsapp +91 7410 588 355
-     b) Yousuf  @ +1 781 778 8769 , maziz@falcon.bentley.edu, whatsapp -> same as mobile.
+     a) Soubhik @ schakraborty@falcon.bentley.edu
+     b) Yousuf  @ maziz@falcon.bentley.edu
 
 
 
