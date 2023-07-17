@@ -1,3 +1,11 @@
+# Group Project: Bigfoot Sightings Analysis
+1. Demonstrate mastery of data science tools (python, data frames, visualizations)
+2. Communicate results to a general audience
+## Description
+Your team will use the tools learned in MA705 to conduct and present a descriptive statis- tics analysis of Bigfoot records. Bigfoot, also known as Sasquatch, is an ape-like creature purported to inhabit the forests of North America. Supposed evidence of Bigfoot, including sightings, photographs, footprints, etc, have been presented throughout the 20th century.
+
+While the credibility of such evidence may certainly be questioned, the influence of the Bigfoot on US culture and perhaps reflection of it cannot be. What does an analysis of the Bigfoot sightings data set reveal? Your team’s analysis will be presented in a Jupyter notebook and include several visualizations.
+
 
 # Steps to install and run this notebook
 
