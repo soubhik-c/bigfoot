@@ -6,6 +6,7 @@ Your team will use the tools learned in MA705 to conduct and present a descripti
 
 While the credibility of such evidence may certainly be questioned, the influence of the Bigfoot on US culture and perhaps reflection of it cannot be. What does an analysis of the Bigfoot sightings data set reveal? Your team’s analysis will be presented in a Jupyter notebook and include several visualizations.
 
+## [Final Output](https://raw.githack.com/soubhik-c/bigfoot/main/src/ma705.html)
 
 # Steps to install and run this notebook
 
